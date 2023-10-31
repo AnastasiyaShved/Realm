@@ -3,27 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAE45C952AF1757500F96F85 /* TastsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE45C942AF1757500F96F85 /* TastsListModel.swift */; };
+		FAE45C982AF1759E00F96F85 /* ListsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE45C972AF1759E00F96F85 /* ListsModel.swift */; };
 		FAEDAEE92AF12226005AC93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAEE82AF12226005AC93D /* AppDelegate.swift */; };
 		FAEDAEEB2AF12226005AC93D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAEEA2AF12226005AC93D /* SceneDelegate.swift */; };
-		FAEDAEED2AF12226005AC93D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAEEC2AF12226005AC93D /* ViewController.swift */; };
 		FAEDAEF02AF12226005AC93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEDAEEE2AF12226005AC93D /* Main.storyboard */; };
 		FAEDAEF22AF12228005AC93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAEDAEF12AF12228005AC93D /* Assets.xcassets */; };
 		FAEDAEF52AF12228005AC93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAEDAEF32AF12228005AC93D /* LaunchScreen.storyboard */; };
+		FAEDAF032AF170EB005AC93D /* TasksListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAF022AF170EB005AC93D /* TasksListTVC.swift */; };
+		FAEDAF052AF17107005AC93D /* TasksTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAF042AF17107005AC93D /* TasksTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAE45C942AF1757500F96F85 /* TastsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastsListModel.swift; sourceTree = "<group>"; };
+		FAE45C972AF1759E00F96F85 /* ListsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsModel.swift; sourceTree = "<group>"; };
 		FAEDAEE52AF12226005AC93D /* Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Realm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEDAEE82AF12226005AC93D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEDAEEA2AF12226005AC93D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAEDAEEC2AF12226005AC93D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAEDAEEF2AF12226005AC93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAEDAEF12AF12228005AC93D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAEDAEF42AF12228005AC93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAEDAEF62AF12228005AC93D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAEDAF022AF170EB005AC93D /* TasksListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTVC.swift; sourceTree = "<group>"; };
+		FAEDAF042AF17107005AC93D /* TasksTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAE45C962AF1757E00F96F85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAE45C942AF1757500F96F85 /* TastsListModel.swift */,
+				FAE45C972AF1759E00F96F85 /* ListsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAE45C9D2AF1B3D600F96F85 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		FAEDAEDC2AF12225005AC93D = {
 			isa = PBXGroup;
 			children = (
@@ -44,6 +66,7 @@
 				FAEDAEE62AF12226005AC93D /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		FAEDAEE62AF12226005AC93D /* Products */ = {
 			isa = PBXGroup;
@@ -56,15 +79,42 @@
 		FAEDAEE72AF12226005AC93D /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				FAEDAEE82AF12226005AC93D /* AppDelegate.swift */,
-				FAEDAEEA2AF12226005AC93D /* SceneDelegate.swift */,
-				FAEDAEEC2AF12226005AC93D /* ViewController.swift */,
-				FAEDAEEE2AF12226005AC93D /* Main.storyboard */,
-				FAEDAEF12AF12228005AC93D /* Assets.xcassets */,
-				FAEDAEF32AF12228005AC93D /* LaunchScreen.storyboard */,
+				FAE45C962AF1757E00F96F85 /* Models */,
+				FAEDAEFE2AF122CE005AC93D /* Views */,
+				FAEDAEFD2AF122BC005AC93D /* Controllers */,
+				FAE45C9D2AF1B3D600F96F85 /* Extentions */,
+				FAEDAEFC2AF122B2005AC93D /* App */,
 				FAEDAEF62AF12228005AC93D /* Info.plist */,
+				FAEDAEF12AF12228005AC93D /* Assets.xcassets */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		FAEDAEFC2AF122B2005AC93D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDAEE82AF12226005AC93D /* AppDelegate.swift */,
+				FAEDAEEA2AF12226005AC93D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FAEDAEFD2AF122BC005AC93D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDAF022AF170EB005AC93D /* TasksListTVC.swift */,
+				FAEDAF042AF17107005AC93D /* TasksTVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAEDAEFE2AF122CE005AC93D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAEDAEEE2AF12226005AC93D /* Main.storyboard */,
+				FAEDAEF32AF12228005AC93D /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +153,7 @@
 				};
 			};
 			buildConfigurationList = FAEDAEE02AF12225005AC93D /* Build configuration list for PBXProject "Realm" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -111,6 +161,9 @@
 				Base,
 			);
 			mainGroup = FAEDAEDC2AF12225005AC93D;
+			packageReferences = (
+				FAE45C9B2AF1B26E00F96F85 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = FAEDAEE62AF12226005AC93D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEDAEED2AF12226005AC93D /* ViewController.swift in Sources */,
+				FAEDAF032AF170EB005AC93D /* TasksListTVC.swift in Sources */,
 				FAEDAEE92AF12226005AC93D /* AppDelegate.swift in Sources */,
+				FAEDAF052AF17107005AC93D /* TasksTVC.swift in Sources */,
+				FAE45C952AF1757500F96F85 /* TastsListModel.swift in Sources */,
 				FAEDAEEB2AF12226005AC93D /* SceneDelegate.swift in Sources */,
+				FAE45C982AF1759E00F96F85 /* ListsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,13 +272,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -270,12 +327,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -358,6 +416,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAE45C9B2AF1B26E00F96F85 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.39.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = FAEDAEDD2AF12225005AC93D /* Project object */;
 }
