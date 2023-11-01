@@ -89,3 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 Realm/Pods/RealmSwift
+Realm/Pods/Target Support Files/Realm
+Realm/Pods/Target Support Files/RealmSwift
