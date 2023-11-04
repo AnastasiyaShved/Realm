@@ -40,10 +40,33 @@ class StorageManager {
     static func deleteList(tasksList: TasksList) {
         do {
             try realm.write{
+                ///нужны вытащить все таски, тк последовательно удаляем таски и только после таскслист
+                let tasks = tasksList.tasks
+                realm.delete(tasks)
                 realm.delete(tasksList)
             }
         } catch {
             print("deleteList ERROR: \(error)")
+        }
+    }
+    // метод по изменению листа 
+    static func editeList(tasksList: TasksList, newListName: String) {
+        do {
+            try realm.write{
+                tasksList.name = newListName
+            }
+        } catch {
+            print("editeList ERROR: \(error)")
+        }
+    }
+    
+    static func makeAllDone(tasksList: TasksList) {
+        do {
+            try realm.write{
+                tasksList.tasks.setValue(true, forKey: "isComplete")
+            }
+        } catch {
+            print("makeAllDone ERROR: \(error)")
         }
     }
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FAEDAEE42AF12226005AC93D"
-               BuildableName = "Realm.app"
+               BuildableName = "RealmProject.app"
                BlueprintName = "RealmProject"
                ReferencedContainer = "container:RealmProject.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FAEDAEE42AF12226005AC93D"
-            BuildableName = "Realm.app"
+            BuildableName = "RealmProject.app"
             BlueprintName = "RealmProject"
             ReferencedContainer = "container:RealmProject.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FAEDAEE42AF12226005AC93D"
-            BuildableName = "Realm.app"
+            BuildableName = "RealmProject.app"
             BlueprintName = "RealmProject"
             ReferencedContainer = "container:RealmProject.xcodeproj">
          </BuildableReference>
