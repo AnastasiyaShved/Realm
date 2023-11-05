@@ -24,7 +24,7 @@ class TasksListTVC: UITableViewController {
         navigationItem.setRightBarButton(add, animated: true)
     }
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
-        let byKeyPath = sender.selectedSegmentIndex == 0 ? "name" : "data"
+        let byKeyPath = sender.selectedSegmentIndex == 0 ? "name" : "date"
         list = list?.sorted(byKeyPath: byKeyPath)
         tableView.reloadData()
     }
@@ -104,7 +104,7 @@ class TasksListTVC: UITableViewController {
     private func alertForAddAndUpdatesTasksList(currentList: TasksList? = nil, indexPath: IndexPath? = nil) {
         let title = currentList == nil ? "New list" : "Edit list"
         let message = "Please insert list's name"
-        let doneButtName = currentList == nil ? "Save" : "Update"
+        let doneButtName = currentList == nil ? "Save" : "Updata"
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ///!!! UITextField !

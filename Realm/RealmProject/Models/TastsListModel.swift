@@ -10,7 +10,7 @@ import RealmSwift
 
 class TasksList: Object {
     @Persisted var name = ""
-    @Persisted var data = Data()
+    @Persisted var date = Date()
     @Persisted var tasks = List<Task>()
 }
 

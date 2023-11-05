@@ -21,7 +21,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="A-Z"/>
-                                <segment title="Data"/>
+                                <segment title="Date"/>
                             </segments>
                             <connections>
                                 <action selector="segmentedControl:" destination="18h-Ne-juf" eventType="valueChanged" id="w9S-r9-TcD"/>

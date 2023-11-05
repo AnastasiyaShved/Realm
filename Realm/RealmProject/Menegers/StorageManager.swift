@@ -8,8 +8,10 @@
 import UIKit
 import RealmSwift
 
-let realm = try! Realm()
+let config = Realm.Configuration(
+    schemaVersion: 2)
 
+let realm = try! Realm(configuration: config)
 
 class StorageManager {
     // универсальный метод по сортировке данных
