@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		92C95B2BFB1CD123A97E9913 /* Pods_Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E7A341F4DD0239AF4C24E8 /* Pods_Realm.framework */; };
 		FA0C69C22AF2DA4100A28829 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C69C12AF2DA4100A28829 /* StorageManager.swift */; };
+		FAD1F99E2AF93B9000279710 /* UItableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F99D2AF93B9000279710 /* UItableViewCellExt.swift */; };
 		FAE45C952AF1757500F96F85 /* TastsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE45C942AF1757500F96F85 /* TastsListModel.swift */; };
 		FAE45C982AF1759E00F96F85 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE45C972AF1759E00F96F85 /* ListModel.swift */; };
 		FAEDAEE92AF12226005AC93D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAEE82AF12226005AC93D /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		96E7A341F4DD0239AF4C24E8 /* Pods_Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B625C3A51111A823B84F03C4 /* Pods-Realm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Realm.debug.xcconfig"; path = "Target Support Files/Pods-Realm/Pods-Realm.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0C69C12AF2DA4100A28829 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FAD1F99D2AF93B9000279710 /* UItableViewCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableViewCellExt.swift; sourceTree = "<group>"; };
 		FAE45C942AF1757500F96F85 /* TastsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastsListModel.swift; sourceTree = "<group>"; };
 		FAE45C972AF1759E00F96F85 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		FAEDAEE52AF12226005AC93D /* RealmProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 		FAE45C9D2AF1B3D600F96F85 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1F99D2AF93B9000279710 /* UItableViewCellExt.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				FAEDAF052AF17107005AC93D /* TasksTVC.swift in Sources */,
 				FA0C69C22AF2DA4100A28829 /* StorageManager.swift in Sources */,
 				FAE45C952AF1757500F96F85 /* TastsListModel.swift in Sources */,
+				FAD1F99E2AF93B9000279710 /* UItableViewCellExt.swift in Sources */,
 				FAEDAEEB2AF12226005AC93D /* SceneDelegate.swift in Sources */,
 				FAE45C982AF1759E00F96F85 /* ListModel.swift in Sources */,
 			);

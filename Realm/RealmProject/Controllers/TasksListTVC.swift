@@ -37,8 +37,10 @@ class TasksListTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let taskList = list?[indexPath.row]
-        cell.textLabel?.text = taskList?.name
+        let taskList = list![indexPath.row]
+//        guard let taskList = list?[indexPath.row] else {return}
+//        cell.textLabel?.text = taskList?.name
+        cell.configure(with: taskList)
         return cell
     }
     
