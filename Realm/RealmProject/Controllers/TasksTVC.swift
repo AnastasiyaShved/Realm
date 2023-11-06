@@ -69,7 +69,8 @@ class TasksTVC: UITableViewController {
         section == 0 ? notCompletedTasks.count : compleated.count
     }
         ///настраиваем названия секциий ( можно  сделать чепез более кастомно настройкиviewForFooterInSection)
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+   
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         section == 0 ? "Not completed tasks" : "Completed tasks"
     }
 
@@ -85,22 +86,25 @@ class TasksTVC: UITableViewController {
         return true
     }
     
+    
+    // MARK: - Actions
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        guard let currentList = list?[indexPath.row] else { return nil}
         
-        //создаем кнопок
+        let task = indexPath.section == 0 ? notCompletedTasks[indexPath.row] : compleated[indexPath.row]
+    
         let deleteContextualAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
-//            StorageManager.deleteList(tasksList: currentList)
-            self?.tableView.deleteRows(at: [indexPath], with: .fade)
+            StorageManager.deletTask(task: task)
+            self?.filteringTasks()
         }
     
         let editContextualAction = UIContextualAction(style: .destructive, title: "Edit") { [weak self] _, _, _ in
-//            self?.alertForAddAndUpdatesTasksList(currentList: currentList, indexPath: indexPath)
+            self?.alertForAddAndUpdatesTask(tasksTVCFlow: .edditingTask(task: task))
             }
         
-        let doneContextualAction = UIContextualAction(style: .destructive, title: "Done")  { [weak self] _, _, _  in
-//            StorageManager.makeAllDone(tasksList: currentList)
-            self?.tableView.reloadRows(at: [indexPath], with: .none)
+        let doneText = task.isComplete ? "Not done" : "Done"
+        let doneContextualAction = UIContextualAction(style: .destructive, title: doneText)  { [weak self] _, _, _  in
+            StorageManager.makeDoneTask(task: task)
+            self?.filteringTasks()
         }
       
         deleteContextualAction.backgroundColor = .red
