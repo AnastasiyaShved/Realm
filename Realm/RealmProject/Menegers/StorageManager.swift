@@ -71,6 +71,31 @@ class StorageManager {
             print("makeAllDone ERROR: \(error)")
         }
     }
+    
+    static func saveTask(tasksList: TasksList, task: Task) {
+        do {
+            try realm.write{
+                tasksList.tasks.append(task)
+            }
+        } catch {
+            print("saveTask ERROR: \(error)")
+        }
+    }
+    
+    static func editTask(task: Task,
+                         newName: String,
+                         newNote: String) {
+        do {
+            try realm.write{
+                task.name = newName
+                task.note = newNote
+                
+            }
+        } catch {
+            print("editTask ERROR: \(error)")
+        }
+    }
+    
 }
 
 

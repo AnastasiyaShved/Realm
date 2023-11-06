@@ -23,6 +23,7 @@ class TasksListTVC: UITableViewController {
         ///отображение кнопки на экране
         navigationItem.setRightBarButton(add, animated: true)
     }
+    
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
         let byKeyPath = sender.selectedSegmentIndex == 0 ? "name" : "date"
         list = list?.sorted(byKeyPath: byKeyPath)
@@ -41,17 +42,10 @@ class TasksListTVC: UITableViewController {
         return cell
     }
     
-   
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            guard let tasks = taskLists?[indexPath.row] else { return }
-//            StorageManager.deleteList(tasksList: tasks)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
-   ///метод  длявыбора несколькиз варинтов реактирование/удание   тп
+    // MARK: - ContextualAction
+   ///метод  для выбора несколькиз варинтов реактирование/удание   тп
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let currentList = list?[indexPath.row] else { return nil}
         
@@ -71,31 +65,24 @@ class TasksListTVC: UITableViewController {
         }
       
         deleteContextualAction.backgroundColor = .red
-        editContextualAction.backgroundColor = .yellow
+        editContextualAction.backgroundColor = .gray
         doneContextualAction.backgroundColor = .green
         
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: [deleteContextualAction, editContextualAction, doneContextualAction])
     
-    
         return swipeActionsConfiguration
     }
 
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? TasksTVC,
            let indexPath = tableView.indexPathForSelectedRow {
             let currentTasksList = list?[indexPath.row]
             destinationVC.currentTasksList = currentTasksList
         }
-            
-        
     }
 
-
-    
+    // MARK: - Private func
     @objc
     private func addBarButtonItemSelector() {
         alertForAddAndUpdatesTasksList()
@@ -126,7 +113,6 @@ class TasksListTVC: UITableViewController {
                 StorageManager.saveTasksList(tasksList: taskList)
                 self.tableView.reloadData()
             }
-            
         }
         //можно  оработать
         let calcelAction = UIAlertAction(title: "Cancel", style: .destructive)
