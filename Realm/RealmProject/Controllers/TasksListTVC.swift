@@ -14,14 +14,16 @@ class TasksListTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        StorageManager.deleteAll()
-        
-        list = StorageManager.getAllTasksLists().sorted(byKeyPath: "name")
-       
         ///создание кнопки по добавлению списка
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemSelector))
         ///отображение кнопки на экране
         navigationItem.setRightBarButton(add, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        list = StorageManager.getAllTasksLists().sorted(byKeyPath: "name")
+        tableView.reloadData()
     }
     
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
@@ -77,7 +79,6 @@ class TasksListTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? TasksTVC,
            let indexPath = tableView.indexPathForSelectedRow {
-            //let currentTasksList = list?[indexPath.row]
             destinationVC.index = indexPath.row
         }
     }
