@@ -9,26 +9,26 @@ import UIKit
 
 extension UITableViewCell {
     
-    
-    
     func configure(with list: TasksList) {
-        let notCompletedTask = list.tasks.filter("isComplete =  false")
-        let completedTask = list.tasks.filter("isComplete =  true")
+        
+        let notCompletedTask = list.tasks.filter("isComplete = false")
+        let completedTask = list.tasks.filter("isComplete = true")
         
         textLabel?.text = list.name
         
         if !notCompletedTask.isEmpty {
-            detailTextLabel?.text = "\(notCompletedTask.count)"
-            detailTextLabel?.font = UIFont.systemFont(ofSize: 17)
-            detailTextLabel?.textColor = .red
+            configureCell(
+                text: "\(notCompletedTask.count)",
+                textColor: .red)
         } else if !completedTask.isEmpty {
-            detailTextLabel?.text = "✓"
-            detailTextLabel?.font = UIFont.systemFont(ofSize: 24)
-            detailTextLabel?.textColor = .green
+            configureCell(
+                text: "✓",
+                font: .systemFont(ofSize: 24),
+                textColor: .green)
         } else {
-            detailTextLabel?.text = "0"
-            detailTextLabel?.font = UIFont.systemFont(ofSize: 17)
-            detailTextLabel?.textColor = .black
+            configureCell(
+                text: "0",
+                textColor: .black)
         }
         
 //        switch list {
@@ -47,10 +47,11 @@ extension UITableViewCell {
 //        }
 //
 //        }
-        
-        
-        
-        
-        
+    }
+    
+    private func configureCell(text: String, font: UIFont = .systemFont(ofSize: 17), textColor: UIColor) {
+        detailTextLabel?.text = text
+        detailTextLabel?.font = font
+        detailTextLabel?.textColor = textColor
     }
 }

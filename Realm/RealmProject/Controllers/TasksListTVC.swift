@@ -38,8 +38,6 @@ class TasksListTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let taskList = list![indexPath.row]
-//        guard let taskList = list?[indexPath.row] else {return}
-//        cell.textLabel?.text = taskList?.name
         cell.configure(with: taskList)
         return cell
     }
@@ -79,8 +77,8 @@ class TasksListTVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? TasksTVC,
            let indexPath = tableView.indexPathForSelectedRow {
-            let currentTasksList = list?[indexPath.row]
-            destinationVC.currentTasksList = currentTasksList
+            //let currentTasksList = list?[indexPath.row]
+            destinationVC.index = indexPath.row
         }
     }
 
@@ -96,7 +94,7 @@ class TasksListTVC: UITableViewController {
         let doneButtName = currentList == nil ? "Save" : "Updata"
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ///!!! UITextField !
+        
         var alertTextField: UITextField = UITextField()
         
         let saveAction = UIAlertAction(title: doneButtName, style: .default) { [weak self] _ in
@@ -116,7 +114,7 @@ class TasksListTVC: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        //можно  оработать
+        //можно  обработать
         let calcelAction = UIAlertAction(title: "Cancel", style: .destructive)
         
         alertController.addAction(saveAction)
